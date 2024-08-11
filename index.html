@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harun Art Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Harun Art Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Harun Art Gallery</h2>
+        <p>Discover and purchase unique artwork.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <div class="art-item">
+                <img src="artwork1.jpg" alt="Artwork 1">
+                <h3>Artwork Title 1</h3>
+                <p>$100</p>
+                <button class="add-to-cart" data-title="Artwork Title 1" data-price="100">Add to Cart</button>
+            </div>
+            <div class="art-item">
+                <img src="artwork2.jpg" alt="Artwork 2">
+                <h3>Artwork Title 2</h3>
+                <p>$150</p>
+                <button class="add-to-cart" data-title="Artwork Title 2" data-price="150">Add to Cart</button>
+            </div>
+            <!-- Add more artwork items as needed -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are passionate about art and dedicated to showcasing unique pieces from talented artists.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <div id="cart" class="cart hidden">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+        <button id="checkout">Checkout</button>
+        <button id="close-cart">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Harun Art Gallery. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
