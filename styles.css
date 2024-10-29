@@ -1,133 +1,159 @@
-/* Add these styles to your existing styles.css */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 20px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
+    display: flex;
+    margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
+    font-size: 18px;
 }
 
-section {
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
     padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.art-item {
-    border: 1px solid #ddd;
-    padding: 10px;
+h1, h2 {
     text-align: center;
-    width: 200px;
 }
 
-.art-item img {
-    max-width: 100%;
-    height: auto;
+.features, .ads {
+    margin-bottom: 20px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: auto;
-}
-
-#contact-form label {
-    margin-top: 10px;
-}
-
-#contact-form input, #contact-form textarea {
-    padding: 8px;
-    margin-top: 5px;
-}
-
-#contact-form button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-
-#cart {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 300px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-#cart.hidden {
-    display: none;
-}
-
-#cart-items {
+.features ul {
     list-style-type: none;
     padding: 0;
 }
 
-#cart-items li {
-    margin-bottom: 10px;
-}
-
-#cart-items li span {
-    display: inline-block;
-    width: 150px;
-}
-
-#checkout, #close-cart {
+.features img {
+    width: 100%;
     margin-top: 10px;
+}
+
+.ads {
+    background-color: #e9ecef;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    border-radius: 5px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
     border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
     cursor: pointer;
 }
 
-#checkout {
-    background-color: #28a745;
+button:hover {
+    background-color: #218838;
 }
 
-#close-cart {
-    background-color: #dc3545;
+.expense-list ul {
+    list-style-type: none;
+    padding: 0;
 }
+
+.expense-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-button, .edit-button {
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.edit-button {
+    background-color: #ffc107;
+}
+
+.total {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.receipt {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.receipt-logo {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 100px;
+}
+
+.receipt-tracking {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-form, .signup-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 

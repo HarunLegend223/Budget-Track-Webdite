@@ -3,76 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harun Art Gallery</title>
+    <title>Budget Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Harun Art Gallery</h1>
+        <div class="logo">
+            <img src="https://i.pinimg.com/564x/31/23/52/31235223e3724d09e515331efe6ff1da.jpg" alt="Logo">
+        </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" id="cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#" id="home-button"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" id="make-budget-button"><i class="fas fa-dollar-sign"></i> Make a Budget</a></li>
+                <li><a href="#" id="track-budget-button"><i class="fas fa-search"></i> Track My Budget</a></li>
+                <li><a href="#" id="login-button"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="#" id="signup-button"><i class="fas fa-user-plus"></i> Sign Up</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Welcome to Harun Art Gallery</h2>
-        <p>Discover and purchase unique artwork.</p>
-    </section>
-
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-container">
-            <div class="art-item">
-                <img src="artwork1.jpg" alt="Artwork 1">
-                <h3>Artwork Title 1</h3>
-                <p>$100</p>
-                <button class="add-to-cart" data-title="Artwork Title 1" data-price="100">Add to Cart</button>
+    <div id="content" class="container">
+        <div id="home" class="section">
+            <h1>Welcome to Our Budget Tracker!</h1>
+            <p>We help you manage your finances by tracking your expenses and helping you budget effectively.</p>
+            <div class="features">
+                <h2>What We Do</h2>
+                <ul>
+                    <li>Track your daily expenses</li>
+                    <li>Calculate VAT automatically</li>
+                    <li>Generate receipts for your expenses</li>
+                    <li>Provide insights on your spending habits</li>
+                </ul>
+                <img src="https://source.unsplash.com/600x400/?budget" alt="Budgeting" />
+                <img src="https://source.unsplash.com/600x400/?finance" alt="Finance" />
             </div>
-            <div class="art-item">
-                <img src="artwork2.jpg" alt="Artwork 2">
-                <h3>Artwork Title 2</h3>
-                <p>$150</p>
-                <button class="add-to-cart" data-title="Artwork Title 2" data-price="150">Add to Cart</button>
+            <div class="ads">
+                <h3>The Importance of Budgeting</h3>
+                <p>Budgeting is essential for managing your money effectively. It helps you prioritize your spending, save for future goals, and avoid debt.</p>
             </div>
-            <!-- Add more artwork items as needed -->
         </div>
-    </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are passionate about art and dedicated to showcasing unique pieces from talented artists.</p>
-    </section>
+        <div class="section" id="budget-container" style="display:none;">
+            <h1>Budget Tracker</h1>
+            <div class="form-container">
+                <input type="text" id="description" placeholder="Expense Description">
+                <input type="number" id="amount" placeholder="Amount">
+                <button id="add-button">Add Expense</button>
+            </div>
+            <div class="expense-list">
+                <h2>Expenses</h2>
+                <ul id="expenses"></ul>
+            </div>
+            <div class="total">
+                <h2>Subtotal: $<span id="subtotal-amount">0.00</span></h2>
+                <h2>Total (incl. VAT): $<span id="total-amount">0.00</span></h2>
+                <p id="calculation-date"></p>
+            </div>
+            <button id="print-receipt">Print Receipt</button>
+        </div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        <div class="section" id="receipt" style="display:none;">
+            <h2>Receipt</h2>
+            <img src="https://i.pinimg.com/564x/31/23/52/31235223e3724d09e515331efe6ff1da.jpg" alt="Logo" class="receipt-logo">
+            <div id="receipt-content"></div>
+            <div id="vat-content"></div>
+            <h4>Receipt Number: <span id="receipt-number"></span></h4>
+            <p id="receipt-date"></p>
+            <button onclick="window.print()">Print</button>
+        </div>
+        <div id="track-budget" class="section" style="display:none;">
+            <h2>Track My Budget</h2>
+            <input type="text" id="track-receipt-number" placeholder="Enter Receipt Number">
+            <button id="track-button">Track</button>
+            <div id="tracking-result"></div>
+        </div>
 
-    <div id="cart" class="cart hidden">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="cart-total">0</span></p>
-        <button id="checkout">Checkout</button>
-        <button id="close-cart">Close</button>
+        <div class="section login-form" id="login-form" style="display:none;">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button id="login-submit">Login</button>
+            <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+        </div>
+
+        <div class="section signup-form" id="signup-form" style="display:none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="text" id="signup-phone" placeholder="Phone Number (with country code)" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button id="signup-submit">Sign Up</button>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Harun Art Gallery. All rights reserved.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
